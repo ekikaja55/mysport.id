@@ -1,0 +1,98 @@
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-family: "Arial", sans-serif;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    animation: slideUp 1s ease-in-out;
+}
+
+.card-body {
+    padding: 2rem;
+    transition: padding 0.3s ease;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.text-primary {
+    color: #4e73df !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .btn-outline-primary {
+    border-color: #4e73df;
+    color: #4e73df;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card .btn-outline-primary:hover {
+    background-color: #4e73df;
+    color: #ffffff;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,121 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #343a40;
+    overflow-x: hidden;
+    transition: all 0.3s;
+}
+
+#sidebar-wrapper .list-group {
+    width: 100%;
+}
+
+#sidebar-wrapper .list-group-item {
+    position: relative;
+    border: none;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#sidebar-wrapper .list-group-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #f8fafb;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+
+#sidebar-wrapper .list-group-item:hover::before {
+    left: 0;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    color: rgb(46, 77, 180) !important;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    transform: translateX(-250px);
+}
+
+#page-content-wrapper {
+    flex: 1;
+    margin-left: 250px;
+    transition: all 0.3s;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 0;
+}
+
+.sidebar-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 80%;
+    margin: auto;
+}
+
+@media (min-width: 769px) {
+    #back-button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        min-width: 100%;
+        max-width: 100%;
+        position: fixed;
+        height: 150vh;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    #page-content-wrapper {
+        margin-left: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        transform: translateX(0);
+    }
+
+    #page-content-wrapper {
+        margin-left: 0;
+    }
+
+    .sidebar-heading {
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,86 @@
+body {
+    background-color: #f8f9fa;
+    font-family: "Arial", sans-serif;
+    color: #343a40;
+}
+
+.container {
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card-header {
+    background-color: #f1f1f1;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+    border-radius: 30px;
+    font-size: 0.9rem;
+    margin: 3px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4e73df;
+    color: #fff;
+}
+
+.btn-outline-danger:hover {
+    background-color: #e74a3b;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .table {
+        font-size: 0.75rem;
+    }
+
+    .btn-outline-primary,
+    .btn-outline-danger {
+        font-size: 0.75rem;
+        margin: 3px;
+        padding: 6px 8px;
+    }
+
+    .modal-dialog {
+        width: 95%;
+    }
+}
